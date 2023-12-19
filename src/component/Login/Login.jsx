@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ContextAuth } from '../../AuthContext/Authcontext';
 
 const Login = () => {
+  let {user} = useContext(ContextAuth)
+  
     return (
         <div className='container'>
            <div className="  bg-base-200">
@@ -24,9 +27,9 @@ const Login = () => {
           </label>
           <input type="password" placeholder="password" className="input input-bordered" required />
           <label className="label">
-            <a className="label-text-alt link link-hover">
+            <span className="label-text-alt link link-hover">
                 <Link to={'/signup'}>Create account</Link>
-            </a>
+            </span>
           </label>
         </div>
         <div className="form-control mt-6">

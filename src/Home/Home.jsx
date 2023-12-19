@@ -1,48 +1,62 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { ContextAuth } from '../AuthContext/Authcontext';
 
 const Home = () => {
-    return (
-        <div>
-            <div className="drawer lg:drawer-open">
-  <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-  <div className="drawer-content ">
-    {/* Page content here */}
-    <Outlet></Outlet>
-    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
-  
-  </div> 
+  let { user , logout} = useContext(ContextAuth)
+const handlelogOut=()=>{
+  logout()
+  .then(() => {
 
-  <div className="drawer-side  ">
-    <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label> 
-  
-    <ul className="menu p-4 w-36 md:w-60 min-h-full bg-black text-base-content">
-    
-    <div className='justify-center text-center pt-4 pb-5'>
-    <div className="avatar placeholder">
-  <div className="bg-neutral text-neutral-content rounded-full w-24">
-    <span className="text-3xl">D</span>
-  </div>
-</div> 
-   <div>
-    <h1 className='text-xl'>User name</h1>
-    <h1>role</h1>
-   </div>
+  }).catch((error) => {
+    console.log(error);
+  });
+}
 
-    </div>
-      
-      <li>
-        <Link to={'/'}>Home</Link>
-      </li>
-      <li>
-        <Link to={'/login'}>Log In</Link>
-      </li>
-    </ul>
-  
-  </div>
-</div>
+  return (
+    <div>
+      <div className="drawer lg:drawer-open">
+        <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+        <div className="drawer-content  text-white">
+          {/* Page content here */}
+          <Outlet></Outlet>
+          <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+
         </div>
-    );
+
+        <div className="drawer-side  ">
+          <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
+
+          <ul className="menu p-4 w-36 md:w-60 min-h-full bg-[#000] text-base-content">
+
+            <div className='justify-center text-center pt-4 pb-5'>
+              <div className="avatar placeholder">
+                <div className="bg-neutral text-neutral-content rounded-full w-24">
+                  <span className="text-3xl">{user?.displayName.slice(0, 1) || '0'}</span>
+                </div>
+              </div>
+              <div>
+                <h1 className='text-xl'>{user?.displayName || 'your Name'}</h1>
+                <h1>role</h1>
+              </div>
+
+            </div>
+
+            <li>
+              <Link to={'/'}>Home</Link>
+            </li>
+         { user?  <li>
+              <a onClick={handlelogOut}>Log out</a>
+            </li>:
+            <li>
+              <Link to={'/login'}>Log In</Link> 
+            </li>}
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Home;
