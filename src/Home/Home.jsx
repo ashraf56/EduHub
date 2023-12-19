@@ -48,6 +48,9 @@ const handlelogOut=()=>{
             <li>
               <Link to={'/'}>Home</Link>
             </li>
+            <li>
+              <Link to={'/add'}>Add</Link>
+            </li>
          { user?  <li>
               <a onClick={handlelogOut}>Log out</a>
             </li>:
