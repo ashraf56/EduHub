@@ -6,6 +6,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const Signup = () => {
   let {user,Createuser,updateUser}= useContext(ContextAuth)
+  
 
   const {
     register,
@@ -22,8 +23,23 @@ Createuser(data.email, data.password)
     const user = userCredential.user;
     updateUser(data.name)
     .then(() => {
-     
+      let usersinfo={name:data.name, email:data.email, password:data.password , role:'student'}
+fetch('http://localhost:3000/alluser' ,
+{
+  method:"POST"
+  ,headers:{
+    'content-type': 'application/json'
+  },
+  body:JSON.stringify(usersinfo)
+}
+).then(res => res.json()).then( Alluser=> {
+console.log(Alluser);
+if (Alluser.insertedId) {
    toast.success('Registration success')
+}
+})
+
+  
    }).catch((error) => {
     console.log(error);
    });

@@ -21,13 +21,14 @@ const Login = () => {
         const user = userCredential.user;
         console.log(user);
         toast.success("Log in success")
+           navigate('/')
       })
       .catch((error) => {
         const errorMessage = error.message;
         console.log(errorMessage);
 
       });
-    navigate('/')
+ 
     reset()
   }
   return (

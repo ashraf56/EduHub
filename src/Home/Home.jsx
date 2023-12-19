@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { ContextAuth } from '../AuthContext/Authcontext';
+import getsingleUser from '../Hook/getsingleUser';
 
 const Home = () => {
   let { user , logout} = useContext(ContextAuth)
+  let [Userinfo] = getsingleUser()
+  console.log(Userinfo);
 const handlelogOut=()=>{
   logout()
   .then(() => {
@@ -27,17 +30,17 @@ const handlelogOut=()=>{
         <div className="drawer-side  ">
           <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
 
-          <ul className="menu p-4 w-36 md:w-60 min-h-full bg-[#000] text-base-content">
+          <ul className="menu p-4 w-36 md:w-60 min-h-full bg-[#000] text-white">
 
             <div className='justify-center text-center pt-4 pb-5'>
               <div className="avatar placeholder">
                 <div className="bg-neutral text-neutral-content rounded-full w-24">
-                  <span className="text-3xl">{user?.displayName.slice(0, 1) || '0'}</span>
+                  <span className="text-3xl">{user?.displayName?.slice(0, 1) || '0'}</span>
                 </div>
               </div>
               <div>
-                <h1 className='text-xl'>{user?.displayName || 'your Name'}</h1>
-                <h1>role</h1>
+                <h1 className='text-2xl'>{user?.displayName || 'your Name'}</h1>
+                <h1>{Userinfo?.role || 'role'}</h1>
               </div>
 
             </div>
