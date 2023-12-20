@@ -18,36 +18,36 @@ const Appliedstudents = () => {
                         <p>{allcourse.description}</p>
                         <p className='pt-1 pb-2'> <span className='font-semibold'>Instructor:</span> {allcourse.instructor}</p>
                         <div className="badge badge-accent "> <span className='pr-2  '>Enrolled Student</span>  {allcourse?.enrolledStudent?.length}</div>
-                            
+
                     </div>
                     <div>
                         <h1 className='font-bold text-xl text-start'>All enrolled student</h1>
                     </div>
                     <div className="card-actions justify-center lg:justify-start ">
-<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3'>
+                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3'>
 
 
-                       {allcourse.enrolledStudent.length === 0 ? <div>No student enrolled</div> :
-                      (  allcourse.enrolledStudent.map(s=>(
-                            <div role="alert " className="alert w-full  max-w-full shadow-lg overflow-auto"  key={s?.id}>
-                        <div className="avatar placeholder">
-  <div className="bg-neutral  rounded-full w-8">
-    <span className="text-white">{s.email?.slice(0,1)}</span>
-  </div>
-</div> 
-                           
-                              <h3 className="font-bold text-base-content">{s.email}</h3>
-                            
-                          </div>
-                        )))
-                       }
-                     </div>
-                      
+                            {allcourse.enrolledStudent.length === 0 ? <div>No student enrolled</div> :
+                                (allcourse.enrolledStudent.map(s => (
+                                    <div role="alert " className="alert w-full  max-w-full shadow-lg overflow-auto" key={s?.id}>
+                                        <div className="avatar placeholder">
+                                            <div className="bg-neutral  rounded-full w-8">
+                                                <span className="text-white">{s.email?.slice(0, 1)}</span>
+                                            </div>
+                                        </div>
+
+                                        <h3 className="font-bold text-base-content">{s.email}</h3>
+
+                                    </div>
+                                )))
+                            }
                         </div>
+
                     </div>
                 </div>
+            </div>
         </div>
     );
 };
 
-            export default Appliedstudents;
+export default Appliedstudents;

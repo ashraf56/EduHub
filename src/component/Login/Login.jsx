@@ -21,26 +21,26 @@ const Login = () => {
         const user = userCredential.user;
         console.log(user);
         toast.success("Log in success")
-           navigate('/')
+        navigate('/')
       })
       .catch((error) => {
         const errorMessage = error.message;
         console.log(errorMessage);
 
       });
- 
+
     reset()
   }
   return (
     <div className='container'>
       <div className="  bg-base-200">
         <div className="hero-content min-h-screen flex-col lg:flex-row">
-          
-          <div className="card shrink-0 w-full  max-w-xl shadow-2xl shadow-gray-700  bg-base-100">
-          <div className="text-center pt-10 pb-6">
-            <h1 className="text-5xl font-bold">Login now!</h1>
 
-          </div>
+          <div className="card shrink-0 w-full  max-w-xl shadow-2xl shadow-gray-700  bg-base-100">
+            <div className="text-center pt-10 pb-6">
+              <h1 className="text-5xl font-bold">Login now!</h1>
+
+            </div>
             <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
               <div className="form-control">
                 <label className="label">
