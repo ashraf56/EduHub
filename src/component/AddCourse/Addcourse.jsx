@@ -67,7 +67,7 @@ const Addcourse = () => {
 
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary text-white">Add </button>
+                            <button className="btn btn-primary">Add </button>
                         </div>
                     </form>
                     <Toaster></Toaster>

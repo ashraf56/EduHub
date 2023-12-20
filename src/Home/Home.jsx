@@ -24,14 +24,13 @@ const handlelogOut=()=>{
           {/* Page content here */}
           <Header></Header>
           <Outlet></Outlet>
-          <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
         </div>
 
         <div className="drawer-side  ">
           <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
 
-          <ul className="menu p-4 w-36 md:w-60 min-h-full bg-[#000] text-white">
+          <ul className="menu p-4 w-44 md:w-60 min-h-full bg-[#000] text-white">
 
             <div className='justify-center text-center pt-4 pb-5'>
            { user ?  <div className="avatar placeholder ">

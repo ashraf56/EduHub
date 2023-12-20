@@ -53,7 +53,8 @@ const Allcourse = () => {
                     </div>
                 </div>
              
-                    ))) :'No course available'
+                    ))) : <div className='text-center font-bold pt-5'> 
+                        No course available</div> 
                 }
               
               
