@@ -6,6 +6,9 @@ import Signup from "../component/Signup/Signup";
 import Addcourse from "../component/AddCourse/Addcourse";
 import DetailCourse from "../component/Allcourse/DetailCourse";
 import Appliedstudents from "../component/Allcourse/Appliedstudents";
+import Myclasses from "../component/Myclasses/Myclasses";
+import Privateroute from "./Privateroute";
+import Adminroute from "./Adminroute";
 
 const router = createBrowserRouter([
     {
@@ -26,17 +29,22 @@ const router = createBrowserRouter([
         },
         {
           path:'/add',
-          element:<Addcourse></Addcourse>
+          element: <Addcourse></Addcourse>
         },
         {
           path:'/detail/:id',
-          element:<DetailCourse></DetailCourse>,
+          element: <Privateroute> <DetailCourse></DetailCourse>  </Privateroute>  ,
           loader: ({params}) => fetch(`http://localhost:3000/course/${params.id}`)
         },
         {
           path:'/applied/:id',
-          element:<Appliedstudents/>,
+          element:<Adminroute> <Appliedstudents/> </Adminroute>  ,
           loader: ({params}) => fetch(`http://localhost:3000/course/${params.id}`)
+        },
+        {
+          path:'/myclass',
+          element: <Privateroute><Myclasses/> </Privateroute> ,
+         
         },
       ]
     },

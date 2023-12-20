@@ -49,6 +49,9 @@ const handlelogOut=()=>{
               <Link to={'/'}>Home</Link>
             </li>
             <li>
+              <Link to={'/myclass'}>myclass</Link>
+            </li>
+            <li>
               <Link to={'/add'}>Add</Link>
             </li>
          { user?  <li>

@@ -44,7 +44,7 @@ const Addcourse = () => {
         <div>
             <div className="hero-content  min-h-screen flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Create your profile!</h1>
+                    <h1 className="text-5xl font-bold"> Create A Course</h1>
 
                 </div>
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
