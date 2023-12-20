@@ -24,7 +24,7 @@ const Addcourse = () => {
             enrolledStudent: enrolledStudent,
 
         }
-        fetch('http://localhost:3000/course',
+        fetch('https://eduhub-ndns.onrender.com/course',
             {
                 method: "POST"
                 , headers: {

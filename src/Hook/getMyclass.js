@@ -10,7 +10,7 @@ const getMyclass = () => {
         queryKey: ['myclass', user?.email],
         enabled:!!user?.email ,
         queryFn: async () => {
-          const res = await axios.get(`http://localhost:3000/cart?email=${user?.email}`)
+          const res = await axios.get(`https://eduhub-ndns.onrender.com/cart?email=${user?.email}`)
     
           return res.data;
           

@@ -24,7 +24,7 @@ Createuser(data.email, data.password)
     updateUser(data.name)
     .then(() => {
       let usersinfo={name:data.name, email:data.email, password:data.password , role:'student'}
-fetch('http://localhost:3000/alluser' ,
+fetch('https://eduhub-ndns.onrender.com/alluser' ,
 {
   method:"POST"
   ,headers:{

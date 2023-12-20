@@ -10,7 +10,7 @@ const getsingleUser = () => {
         queryKey: ['Userinfo', user?.email],
         enabled:!!user?.email ,
         queryFn: async () => {
-          const res = await axios.get(`http://localhost:3000/alluser/${user?.email}`)
+          const res = await axios.get(`https://eduhub-ndns.onrender.com/alluser/${user?.email}`)
     
           return res.data;
           

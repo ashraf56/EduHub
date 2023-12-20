@@ -3,10 +3,10 @@ import React from 'react';
 const Header = () => {
     return (
         <div>
-            <div className="navbar bg-base-100 ">
+            <div className="navbar bg-neutral  justify-center">
 
-  <div className="navbar-center justify-center">
-    <a className="btn btn-ghost text-xl">EduHub</a>
+  <div className="navbar-center ">
+    <a className="btn btn-ghost text-xl text-white">EduHub</a>
   </div>
  
 </div>

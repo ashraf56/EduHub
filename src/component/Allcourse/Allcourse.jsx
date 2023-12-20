@@ -10,7 +10,7 @@ const Allcourse = () => {
     let {data:courses=[],refetch}=useQuery( 
         ['course'],
        async()=>{
-            let res= await axios.get('http://localhost:3000/course')
+            let res= await axios.get('https://eduhub-ndns.onrender.com/course')
             return res.data
            
                 })
@@ -25,7 +25,7 @@ const Allcourse = () => {
             </div>
             <div className='grid grid-cols-1 my-5 gap-4  '>
 
-                { courses ?
+                { courses.length !== 0 ?
                    ( courses?.map(c=>(
 
                          <div key={c._id} className="card  md:card-side bg-base-100 shadow-2xl  max-w-full backdrop-blur-xl ">

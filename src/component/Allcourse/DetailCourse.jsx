@@ -22,7 +22,7 @@ const DetailCourse = () => {
             let updatedCourse = { id: Userinfo._id, email: Userinfo.email };
           
             try {
-              const response = await fetch(`http://localhost:3000/course/${courseId}`, {
+              const response = await fetch(`https://eduhub-ndns.onrender.com/course/${courseId}`, {
                 method: 'PUT',
                 headers: {
                   'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ const DetailCourse = () => {
             let cart={  courseId:course._id, name:course.name  , description:course.description , instructor:course.instructor, email:Userinfo.email, userId:Userinfo._id}
           
             try {
-              const response = await fetch('http://localhost:3000/cart', {
+              const response = await fetch('https://eduhub-ndns.onrender.com/cart', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',

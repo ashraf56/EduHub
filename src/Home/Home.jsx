@@ -48,7 +48,7 @@ const handlelogOut=()=>{
               }
               <div>
               { user  ?<>
-             <h1 className='text-4xl pb-2 pt-2'>{user?.displayName }</h1>
+             <h1 className='text-xl pb-2 pt-2'>{user?.displayName }</h1>
                 <h1>{Userinfo?.role }</h1> </>  :
                 <div className='pt-2'>
                   <p>Log in  now</p>

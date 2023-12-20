@@ -27,8 +27,8 @@ const Appliedstudents = () => {
 <div className='grid grid-cols-2 md:grid-cols-3 gap-3'>
 
 
-                       {
-                        allcourse.enrolledStudent.map(s=>(
+                       {allcourse.enrolledStudent.length === 0 ? <div>No student enrolled</div> :
+                      (  allcourse.enrolledStudent.map(s=>(
                             <div role="alert " className="alert max-w-xl shadow-lg" key={s?.id}>
                         <div className="avatar placeholder">
   <div className="bg-neutral  rounded-full w-8">
@@ -39,7 +39,7 @@ const Appliedstudents = () => {
                               <h3 className="font-bold">{s.email}</h3>
                             </div>
                           </div>
-                        ))
+                        )))
                        }
                      </div>
                       
