@@ -35,11 +35,12 @@ const Login = () => {
     <div className='container'>
       <div className="  bg-base-200">
         <div className="hero-content min-h-screen flex-col lg:flex-row">
-          <div className="text-center lg:text-left">
+          
+          <div className="card shrink-0 w-full  max-w-xl shadow-2xl shadow-gray-700  bg-base-100">
+          <div className="text-center pt-10 pb-6">
             <h1 className="text-5xl font-bold">Login now!</h1>
 
           </div>
-          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
               <div className="form-control">
                 <label className="label">
@@ -59,7 +60,7 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary text-white">Login</button>
+                <button className="btn btn-primary ">Login</button>
               </div>
             </form>
             <Toaster></Toaster>

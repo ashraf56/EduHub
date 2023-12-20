@@ -47,7 +47,7 @@ const DetailCourse = () => {
           };
           
           const addToCart = async (course) => {
-            let cart={name:course.name  , description:course.description , instructor:course.instructor, email:Userinfo.email, userId:Userinfo._id}
+            let cart={  courseId:course._id, name:course.name  , description:course.description , instructor:course.instructor, email:Userinfo.email, userId:Userinfo._id}
           
             try {
               const response = await fetch('http://localhost:3000/cart', {
@@ -83,20 +83,19 @@ const DetailCourse = () => {
    
 
     return (
-        <div>
+        <div className='px-10 py-10'>
                 <form key={allcourse._id} className="card  bg-base-100 shadow-2xl  max-w-full " onSubmit={handleSubmit(onSubmit)}>
                     <div className='max-w-full   bg-[#3f37c9] text-white p-4 rounded-l-xl relative '>
                         <p>COURSE</p>
-                        <h1 className='text-3xl py-5 '  >{allcourse.name}</h1>
-                        <p className='flex items-center gap-1 lg:absolute bottom-2'>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-4 h-4 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
-                            Enroll now   </p>
+                        <h1 className='text-5xl py-5 '  >{allcourse.name}</h1>
+                        
                     </div>
                     <div className="card-body w-full  bg-white text-[#3f37c9] rounded-r-xl">
                         <div>
                             <h2 className="card-title">{allcourse.name}</h2>
-                            <p>Click the button to watch on Jetflix app.</p>
-                            <div className="badge badge-accent">25</div>
+                            <p className='pt-3'>{allcourse.description}</p>
+                            <p className='pt-1'> <span className='font-semibold'>Instructor:</span> {allcourse.instructor}</p>
+                           
                         </div>
 
                         <div className="card-actions justify-end ">

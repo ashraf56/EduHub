@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ContextAuth } from '../../AuthContext/Authcontext';
 import { useForm } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
@@ -15,7 +15,7 @@ const Signup = () => {
     reset,
     formState: { errors },
   } = useForm()
-
+  let navigate = useNavigate()
   const onSubmit = (data) =>{
 console.log(data);
 Createuser(data.email, data.password)
@@ -36,6 +36,7 @@ fetch('http://localhost:3000/alluser' ,
 console.log(Alluser);
 if (Alluser.insertedId) {
    toast.success('Registration success')
+   navigate('/')
 }
 })
 
@@ -55,11 +56,12 @@ reset()
         <div>
             <div className=" ">
   <div className="hero-content  min-h-screen flex-col lg:flex-row-reverse">
-    <div className="text-center lg:text-left">
+   
+    <div className="card shrink-0 w-full max-w-xl shadow-2xl shadow-gray-700 bg-base-100">
+    <div className="text-center pt-10 pb-6">
       <h1 className="text-5xl font-bold">Create your profile!</h1>
       
     </div>
-    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
           <label className="label">
@@ -83,7 +85,7 @@ reset()
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary text-white">Sign up</button>
+          <button className="btn btn-primary ">Sign up</button>
         </div>
       </form>
       <Toaster></Toaster>

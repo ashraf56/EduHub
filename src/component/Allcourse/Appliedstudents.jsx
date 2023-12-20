@@ -3,38 +3,45 @@ import { useLoaderData } from 'react-router-dom';
 
 const Appliedstudents = () => {
     let allcourse = useLoaderData()
-   
-    return (
-        <div>
-              <div key={allcourse._id} className="card  bg-base-100 shadow-2xl  max-w-full " >
-                    <div className='max-w-full   bg-[#3f37c9] text-white p-4 rounded-l-xl relative '>
-                        <p>COURSE</p>
-                        <h1 className='text-3xl py-5 '  >{allcourse.name}</h1>
-                        <p className='flex items-center gap-1 lg:absolute bottom-2'>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-4 h-4 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
-                            Enroll now   </p>
-                    </div>
-                    <div className="card-body w-full  bg-white text-[#3f37c9] rounded-r-xl">
-                        <div>
-                            <h2 className="card-title">{allcourse.name}</h2>
-                            <p>Click the button to watch on Jetflix app.</p>
-                            <div className="badge badge-accent">25</div>
-                        </div>
 
-                        <div className="card-actions justify-center ">
+    return (
+        <div className='px-10 pt-20'>
+            <div key={allcourse._id} className="card  bg-base-100 shadow-2xl  max-w-full " >
+                <div className='max-w-full   bg-[#3f37c9] text-white p-4    '>
+                    <p>COURSE</p>
+                    <h1 className='text-6xl pb-9 '  >{allcourse.name}</h1>
+
+                </div>
+                <div className="card-body w-full  bg-white text-[#3f37c9] ">
+                    <div>
+                        <h2 className="card-title">{allcourse.name}</h2>
+                        <p>{allcourse.description}</p>
+                        <p className='pt-1 pb-2'> <span className='font-semibold'>Instructor:</span> {allcourse.instructor}</p>
+                        <div className="badge badge-accent "> <span className='pr-2  '>Enrolled Student</span>  {allcourse?.enrolledStudent?.length}</div>
+                            
+                    </div>
+                    <div>
+                        <h1 className='font-bold text-xl text-start'>All enrolled student</h1>
+                    </div>
+                    <div className="card-actions justify-start ">
+<div className='grid grid-cols-2 md:grid-cols-3 gap-3'>
+
 
                        {
                         allcourse.enrolledStudent.map(s=>(
-                            <div role="alert" className="alert shadow-lg" key={s?.id}>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-info shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <div role="alert " className="alert max-w-xl shadow-lg" key={s?.id}>
+                        <div className="avatar placeholder">
+  <div className="bg-neutral  rounded-full w-8">
+    <span className="text-white">{s.email?.slice(0,1)}</span>
+  </div>
+</div> 
                             <div>
                               <h3 className="font-bold">{s.email}</h3>
-                              <div className="text-xs">You have 1 unread message</div>
                             </div>
                           </div>
                         ))
                        }
-                     
+                     </div>
                       
                         </div>
                     </div>
@@ -43,4 +50,4 @@ const Appliedstudents = () => {
     );
 };
 
-export default Appliedstudents;
+            export default Appliedstudents;
