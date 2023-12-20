@@ -6,7 +6,7 @@ import axios from "axios";
 
 const getsingleUser = () => {
     let {user} = useContext(ContextAuth)
-    const { refetch, data: Userinfo=[] } = useQuery({
+    const { refetch, data: Userinfo=[], isLoading: userloading } = useQuery({
         queryKey: ['Userinfo', user?.email],
         enabled:!!user?.email ,
         queryFn: async () => {
@@ -19,7 +19,7 @@ const getsingleUser = () => {
       })
       
       
-      return[Userinfo,refetch]
+      return[Userinfo,refetch,userloading]
   
 };
 

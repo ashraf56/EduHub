@@ -4,9 +4,11 @@ import { ContextAuth } from '../AuthContext/Authcontext';
 import getsingleUser from '../Hook/getsingleUser';
 import imgs from '../assets/user_1077012.png'
 import Header from '../component/Header/Header';
+import getAdmin from '../Hook/getAdmin';
 const Home = () => {
   let { user , logout} = useContext(ContextAuth)
   let [Userinfo] = getsingleUser()
+  let [isAdmin]=getAdmin()
 const handlelogOut=()=>{
   logout()
   .then(() => {
@@ -46,7 +48,7 @@ const handlelogOut=()=>{
               
               }
               <div>
-              { user  ?<>
+              { user ?<>
              <h1 className='text-xl pb-2 pt-2'>{user?.displayName }</h1>
                 <h1>{Userinfo?.role }</h1> </>  :
                 <div className='pt-2'>
@@ -63,10 +65,10 @@ const handlelogOut=()=>{
            { Userinfo.role === 'student' && <li>
               <Link to={'/myclass'}>myclass</Link>
             </li> }
-            { Userinfo.role === 'admin' && <li>
+            { Userinfo?.role === 'admin'    && <li>
             <Link to={'/add'}>Add</Link>
             </li>}
-         { user?  <li>
+         { user && Userinfo?  <li>
               <a onClick={handlelogOut}>Log out</a>
             </li>:
             <li>

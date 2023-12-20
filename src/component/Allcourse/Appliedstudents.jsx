@@ -5,7 +5,7 @@ const Appliedstudents = () => {
     let allcourse = useLoaderData()
 
     return (
-        <div className='px-10 pt-20'>
+        <div className='px-10 pt-10'>
             <div key={allcourse._id} className="card  bg-base-100 shadow-2xl  max-w-full " >
                 <div className='max-w-full   bg-[#3f37c9] text-white p-4    '>
                     <p>COURSE</p>
@@ -23,21 +23,21 @@ const Appliedstudents = () => {
                     <div>
                         <h1 className='font-bold text-xl text-start'>All enrolled student</h1>
                     </div>
-                    <div className="card-actions justify-start ">
-<div className='grid grid-cols-2 md:grid-cols-3 gap-3'>
+                    <div className="card-actions justify-center lg:justify-start ">
+<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3'>
 
 
                        {allcourse.enrolledStudent.length === 0 ? <div>No student enrolled</div> :
                       (  allcourse.enrolledStudent.map(s=>(
-                            <div role="alert " className="alert max-w-xl shadow-lg" key={s?.id}>
+                            <div role="alert " className="alert w-full  max-w-full shadow-lg overflow-auto"  key={s?.id}>
                         <div className="avatar placeholder">
   <div className="bg-neutral  rounded-full w-8">
     <span className="text-white">{s.email?.slice(0,1)}</span>
   </div>
 </div> 
-                            <div>
-                              <h3 className="font-bold">{s.email}</h3>
-                            </div>
+                           
+                              <h3 className="font-bold text-base-content">{s.email}</h3>
+                            
                           </div>
                         )))
                        }
