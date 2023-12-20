@@ -3,6 +3,8 @@
 # live link 
 - https://edu-hub-eight.vercel.app/
 
+- https://nimble-panda-74c968.netlify.app/  (if vercel gives any error then try this )
+
 # server side code 
 - https://github.com/ashraf56/Eduhub-server
 
