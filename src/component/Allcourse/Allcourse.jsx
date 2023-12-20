@@ -46,9 +46,11 @@ const Allcourse = () => {
 
                         <div className="card-actions justify-end ">
 
-                         <Link to={`/detail/${c._id}`}>
-                         <button className="btn btn-ghost" >Apply now</button>
-                         </Link>   
+                     { Userinfo.role=== 'admin' ?    
+                        '' :
+                       <Link to={`/detail/${c._id}`}><button className="btn btn-ghost " >Apply now</button></Link>
+                       }
+                         
                         </div>
                     </div>
                 </div>

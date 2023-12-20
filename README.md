@@ -5,3 +5,8 @@
 
 # server side code 
 - https://github.com/ashraf56/Eduhub-server
+
+
+# Admin Login
+ - email : a@gmail.com
+ - pass : 123456
