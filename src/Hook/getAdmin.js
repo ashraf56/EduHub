@@ -10,7 +10,7 @@ const getAdmin = () => {
         queryKey: ['isAdmin', user?.email],
         enabled:!!user?.email ,
         queryFn: async () => {
-          const res = await axios.get(`http://localhost:3000/alluser/admin/${user?.email}`)
+          const res = await axios.get(`https://eduhub-ndns.onrender.com/alluser/admin/${user?.email}`)
     
           return res.data.admin;
           
