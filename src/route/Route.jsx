@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/add',
-          element: <Addcourse></Addcourse>
+          element: <Adminroute>   <Addcourse></Addcourse></Adminroute>
         },
         {
           path:'/detail/:id',
