@@ -87,7 +87,7 @@ const DetailCourse = () => {
       <form key={allcourse?._id} className="card  bg-base-100 shadow-2xl  max-w-full " onSubmit={handleSubmit(onSubmit)}>
         <div className='max-w-full   bg-[#3f37c9] text-white p-4 rounded-l-xl relative '>
           <p>COURSE</p>
-          <h1 className='text-5xl py-5 '  >{allcourse.name}</h1>
+          <h1 className='text-5xl py-5 '  >{allcourse?.name || 'loading..'}</h1>
 
         </div>
         <div className="card-body w-full  bg-white text-[#3f37c9] rounded-r-xl">

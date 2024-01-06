@@ -54,8 +54,8 @@ const Signup = () => {
   }
   return (
     <div>
-      <div className=" ">
-        <div className="hero-content  min-h-screen flex-col lg:flex-row-reverse">
+      <div className="  ">
+        <div className="hero-content   flex-col lg:flex-row-reverse">
 
           <div className="card shrink-0 w-full max-w-xl shadow-2xl shadow-gray-700 bg-base-100">
             <div className="text-center pt-10 pb-6">
