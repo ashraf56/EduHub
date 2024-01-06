@@ -14,9 +14,9 @@ const Appliedstudents = () => {
                 </div>
                 <div className="card-body w-full  bg-white text-[#3f37c9] ">
                     <div>
-                        <h2 className="card-title">{allcourse.name}</h2>
-                        <p>{allcourse.description}</p>
-                        <p className='pt-1 pb-2'> <span className='font-semibold'>Instructor:</span> {allcourse.instructor}</p>
+                        <h2 className="card-title">{allcourse?.name}</h2>
+                        <p>{allcourse?.description}</p>
+                        <p className='pt-1 pb-2'> <span className='font-semibold'>Instructor:</span> {allcourse?.instructor}</p>
                         <div className="badge badge-accent "> <span className='pr-2  '>Enrolled Student</span>  {allcourse?.enrolledStudent?.length}</div>
 
                     </div>
@@ -28,7 +28,7 @@ const Appliedstudents = () => {
 
 
                             {allcourse?.enrolledStudent?.length === 0 ? <div>No student enrolled</div> :
-                                (allcourse.enrolledStudent.map(s => (
+                                (allcourse?.enrolledStudent?.map(s => (
                                     <div role="alert " className="alert w-full  max-w-full shadow-lg overflow-auto" key={s?.id}>
                                         <div className="avatar placeholder">
                                             <div className="bg-neutral  rounded-full w-8">

@@ -33,7 +33,7 @@ const Allcourse = () => {
                             <h1 className=' text-2xl md:text-5xl py-5   font-bold'>{c.name}</h1>
                             <p className='flex items-center gap-1 lg:absolute bottom-2'>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-4 h-4 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
-                                {Userinfo.role === 'admin' ? <Link to={`/applied/${c._id}`} > See Detail </Link> : ' Enroll now '}   </p>
+                                {Userinfo?.role === 'admin' ? <Link to={`/applied/${c._id}`} > See Detail </Link> : ' Enroll now '}   </p>
                         </div>
                         <div className="card-body w-full md:w-4/6 bg-white text-[#3f37c9] rounded-r-xl">
                             <div>
@@ -45,9 +45,9 @@ const Allcourse = () => {
 
                             <div className="card-actions justify-end ">
 
-                                {Userinfo.role === 'admin' ?
+                                {Userinfo?.role === 'admin' ?
                                     '' :
-                                    <Link to={`/detail/${c._id}`}><button className="btn btn-ghost " >Apply now</button></Link>
+                                    <Link to={`/detail/${c?._id}`}><button className="btn btn-ghost " >Apply now</button></Link>
                                 }
 
                             </div>
