@@ -27,7 +27,7 @@ const Appliedstudents = () => {
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3'>
 
 
-                            {allcourse.enrolledStudent.length === 0 ? <div>No student enrolled</div> :
+                            {allcourse?.enrolledStudent?.length === 0 ? <div>No student enrolled</div> :
                                 (allcourse.enrolledStudent.map(s => (
                                     <div role="alert " className="alert w-full  max-w-full shadow-lg overflow-auto" key={s?.id}>
                                         <div className="avatar placeholder">

@@ -22,7 +22,7 @@ const DetailCourse = () => {
     let updatedCourse = { id: Userinfo._id, email: Userinfo.email };
 
     try {
-      const response = await fetch(`https://eduhub-ndns.onrender.com/course/${courseId}`, {
+      const response = await fetch(`https://eduhub-server.vercel.app/course/${courseId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ const DetailCourse = () => {
     let cart = { courseId: course._id, name: course.name, description: course.description, instructor: course.instructor, email: Userinfo.email, userId: Userinfo._id }
 
     try {
-      const response = await fetch('https://eduhub-ndns.onrender.com/cart', {
+      const response = await fetch('https://eduhub-server.vercel.app/cart', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ const DetailCourse = () => {
 
   return (
     <div className='px-10 py-10'>
-      <form key={allcourse._id} className="card  bg-base-100 shadow-2xl  max-w-full " onSubmit={handleSubmit(onSubmit)}>
+      <form key={allcourse?._id} className="card  bg-base-100 shadow-2xl  max-w-full " onSubmit={handleSubmit(onSubmit)}>
         <div className='max-w-full   bg-[#3f37c9] text-white p-4 rounded-l-xl relative '>
           <p>COURSE</p>
           <h1 className='text-5xl py-5 '  >{allcourse.name}</h1>
@@ -92,9 +92,9 @@ const DetailCourse = () => {
         </div>
         <div className="card-body w-full  bg-white text-[#3f37c9] rounded-r-xl">
           <div>
-            <h2 className="card-title">{allcourse.name}</h2>
-            <p className='pt-3'>{allcourse.description}</p>
-            <p className='pt-1'> <span className='font-semibold'>Instructor:</span> {allcourse.instructor}</p>
+            <h2 className="card-title">{allcourse?.name}</h2>
+            <p className='pt-3'>{allcourse?.description}</p>
+            <p className='pt-1'> <span className='font-semibold'>Instructor:</span> {allcourse?.instructor}</p>
 
           </div>
 

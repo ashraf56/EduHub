@@ -24,7 +24,7 @@ const Signup = () => {
         updateUser(data.name)
           .then(() => {
             let usersinfo = { name: data.name, email: data.email, password: data.password, role: 'student' }
-            fetch('https://eduhub-ndns.onrender.com/alluser',
+            fetch('https://eduhub-server.vercel.app/alluser',
               {
                 method: "POST"
                 , headers: {

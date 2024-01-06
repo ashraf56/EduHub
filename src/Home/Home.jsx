@@ -50,6 +50,7 @@ const Home = () => {
               <div>
                 {user ? <>
                   <h1 className='text-xl pb-2 pt-2'>{user?.displayName}</h1>
+                  <h1>{Userinfo?.email}</h1>
                   <h1>{Userinfo?.role}</h1> </> :
                   <div className='pt-2'>
                     <p>Log in  now</p>
@@ -62,12 +63,15 @@ const Home = () => {
             <li>
               <Link to={'/'}>Home</Link>
             </li>
-            {Userinfo.role === 'student' && <li>
-              <Link to={'/myclass'}>myclass</Link>
-            </li>}
-            {Userinfo?.role === 'admin' && <li>
+
+            {Userinfo.role === 'student' && user &&
+              <li>
+                <Link to={'/myclass'}>myclass</Link>
+              </li>}
+            {isAdmin && <li>
               <Link to={'/add'}>Add</Link>
-            </li>}
+            </li>
+            }
             {user && Userinfo ? <li>
               <a onClick={handlelogOut}>Log out</a>
             </li> :

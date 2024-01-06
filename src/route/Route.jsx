@@ -34,12 +34,12 @@ const router = createBrowserRouter([
       {
         path: '/detail/:id',
         element: <Privateroute> <DetailCourse></DetailCourse>  </Privateroute>,
-        loader: ({ params }) => fetch(`https://eduhub-ndns.onrender.com/course/${params.id}`)
+        loader: ({ params }) => fetch(`https://eduhub-server.vercel.app/course/${params.id}`)
       },
       {
         path: '/applied/:id',
         element: <Adminroute> <Appliedstudents /> </Adminroute>,
-        loader: ({ params }) => fetch(`https://eduhub-ndns.onrender.com/course/${params.id}`)
+        loader: ({ params }) => fetch(`https://eduhub-server.vercel.app/course/${params.id}`)
       },
       {
         path: '/myclass',

@@ -9,7 +9,7 @@ const Adminroute = ({ children }) => {
     let [isAdmin, adminloading] = getAdmin()
 
     if (loader || adminloading) {
-        return <span className="loading loading-bars loading-lg"></span>
+        return <div className='text-center justify-center items-center mt-10 min-h-screen'> <span className="loading loading-ring loading-lg text-center justify-center"></span></div>
     }
     if (user && isAdmin) {
         return children

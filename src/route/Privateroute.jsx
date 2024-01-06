@@ -7,7 +7,7 @@ const Privateroute = ({ children }) => {
     let { user, loader } = useContext(ContextAuth)
 
     if (loader) {
-        return <span className="loading loading-bars loading-lg"></span>
+        return <div className='text-center justify-center items-center mt-10 min-h-screen'> <span className="loading loading-ring loading-lg text-center justify-center"></span></div>
     }
     if (user) {
         return children

@@ -24,7 +24,7 @@ const Addcourse = () => {
             enrolledStudent: enrolledStudent,
 
         }
-        fetch('https://eduhub-ndns.onrender.com/course',
+        fetch('https://eduhub-server.vercel.app/course',
             {
                 method: "POST"
                 , headers: {

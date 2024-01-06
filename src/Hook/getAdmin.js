@@ -10,7 +10,7 @@ const getAdmin = () => {
     queryKey: ['isAdmin', user?.email],
     enabled: !!user?.email,
     queryFn: async () => {
-      const res = await axios.get(`https://eduhub-ndns.onrender.com/alluser/admin/${user?.email}`)
+      const res = await axios.get(`https://eduhub-server.vercel.app/alluser/admin/${user?.email}`)
 
       return res.data.admin;
 
