@@ -20,6 +20,8 @@
 ![Project Logo](/public/home.png)
 - Admin Home
 ![Project Logo](/public/AdminHome.png)
+- Admin Course detail
+![Project Logo](/public/AdminCoursedetail.png)
 - Create a Course
 ![Project Logo](/public/CreateCourse.png)
 - Log IN
